@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="classicladder2" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="/home/benoit/ClassicLadder2/src" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="../classicladder2" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="$make -f $makefile" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile" />
+					<SilentBuild command="$make -f $makefile &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="../classicladder2" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../wxcl2/cl2_ext_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../wxcl2/cl2_ext_lib.h" />
+		<Unit filename="Makefile" />
+		<Unit filename="arithm_eval.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="arithm_eval.h" />
+		<Unit filename="arrays.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="base64.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="base64.h" />
+		<Unit filename="cJSON.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cJSON.h" />
+		<Unit filename="calc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="calc.h" />
+		<Unit filename="calc_sequential.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="calc_sequential.h" />
+		<Unit filename="cl2_types_id.h" />
+		<Unit filename="classicladder2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="classicladder2.h" />
+		<Unit filename="classicladder2_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="classicladder2_gtk.h" />
+		<Unit filename="config_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="config_gtk.h" />
+		<Unit filename="drawing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="drawing.h" />
+		<Unit filename="drawing_sequential.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="drawing_sequential.h" />
+		<Unit filename="edit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="edit.h" />
+		<Unit filename="edit_copy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="edit_copy.h" />
+		<Unit filename="edit_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="edit_gtk.h" />
+		<Unit filename="edit_sequential.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="edit_sequential.h" />
+		<Unit filename="editproperties_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editproperties_gtk.h" />
+		<Unit filename="files.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="files.h" />
+		<Unit filename="files_project.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="files_project.h" />
+		<Unit filename="files_sequential.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="files_sequential.h" />
+		<Unit filename="frames_log_buffers.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="frames_log_buffers.h" />
+		<Unit filename="hardware.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hardware.h" />
+		<Unit filename="icons_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="icons_gtk.h" />
+		<Unit filename="log_events.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="log_events.h" />
+		<Unit filename="log_events_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="log_events_gtk.h" />
+		<Unit filename="manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="manager.h" />
+		<Unit filename="manager_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="manager_gtk.h" />
+		<Unit filename="menu_and_toolbar_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu_and_toolbar_gtk.h" />
+		<Unit filename="modem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modem.h" />
+		<Unit filename="monitor_protocol.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="monitor_protocol.h" />
+		<Unit filename="monitor_protocol_adds_serial.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="monitor_protocol_adds_serial.h" />
+		<Unit filename="monitor_serial_config_window_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="monitor_serial_config_window_gtk.h" />
+		<Unit filename="monitor_sockets_udp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="monitor_sockets_udp.h" />
+		<Unit filename="monitor_transfer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="preferences.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="preferences.h" />
+		<Unit filename="serial_linux.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="socket_modbus_master.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tasks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="vars_access.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="vars_access.h" />
+		<Unit filename="vars_browser_gtk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="vars_browser_gtk.h" />
+		<Unit filename="vars_names.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="vars_names.h" />
+		<Unit filename="vars_system.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="vars_system.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
