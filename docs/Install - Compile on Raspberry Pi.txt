@@ -1,0 +1,102 @@
+INSTALLATION / COMPILATION OF CLASSIC LADDER 2 ON RASPBERRY
+===========================================================
+
+Pre-requisite : CL2 (Classic Ladder 2) has been tested on Raspberry Pi 3, Raspberry Pi 4; Pi400 and Compute Module 4 platforms. 
+It should work also on Raspberry Pi 5, but it has not yet been tested on this platform.
+
+The recommended platform is the RPi4 / Pi400 / Compute Module 4. 1GB RAM versions are enough to run CL2.
+
+MANDATORY : the OS must be at least BULLSEYE (Debian 11). Classic Ladder 2 does not work under Buster or older Debian versions on the RPi.
+
+IMPORTANT : CL2 does not use the GPIO, it only uses MODBUS for communication with I/O modules (via Serial USB or Ethernet)
+
+EASY PATH : use the precompiled Classic Ladder 2 application
+============================================================
+I provide a 32-bit precompiled CL2 application on https://github.com/bbouchez/classicladder2
+This file avoids to compile the application by yourself.
+
+To use the precompiled application :
+
+- make sure that your RPi OS is up to date by typing the following lines in a terminal :
+
+sudo apt update
+sudo apt upgrade
+
+Two important points to notice :
+- after an upgrade, it is always recommended to reboot the Raspberry
+- if you use WiFi to connect to the Internet for the upgrade, I strongly recommend to disconnect the Ethernet cable as it may conflict with wireless network access (apt upgrade will complain about unreachable websites and files)
+
+- make sure that GTK3 is installed on your RPi (it is normally installed by default if you use RPi Graphical User Interface) :
+
+sudo apt install libgtk-3-0
+
+Download the classicladder2 executable file from the Release page on Github and copy it on the RPi.
+
+Open a terminal window and go in the directory where the executable file is located (in our case, it located in /classicladder2 of the user home directory)
+Enter the following command to give executable rights
+
+sudo chmod +x classicladder2
+
+The application is now ready to run on your machine : :-)
+
+Just enter ./classicladder2 to start using it...
+
+
+COMPILE CLASSICLADDER2 BY YOURSELF
+==================================
+
+Compiling ClassicLadder2 by yourself is not a complex task. 
+This way of proceeding is helpful to understand what are the steps required to compile an application, and it has the big advantage to allow you to dig into source code and make your own changes if needed.
+
+* First of all, follow the same steps as described before to make sure your Raspberry is up-to-date and has the required GTK3 library.
+* Then make sure that gcc is installed (it is normally installed by default on all Raspberry OS) by typing the following command :
+
+gcc --version
+
+If you get an error message, you will need to install gcc before anything else. There are a lot of tutorials available explaining how to do it, we will not give the details here.
+
+* Install git (if you never did it before) :
+
+sudo apt install git
+
+* Install finally the GTK3 development system (Note that installing the GTK3 development system will install a lot of libraries, and this can take some time...)
+
+sudo apt install libgtk-3-dev
+
+* Clone the classicladder2 repository on your machine
+
+git clone https://github.com/bbouchez/classicladder2
+
+* Go into classicladder2 source directory (/classicladder2/src) and enter the following command :
+
+make clean
+
+This step will help you to check that everything is ready. Now, prepare a coffee and enter the following command :
+
+make -f Makefile
+
+(and you will have time to drink the coffee... Do not worry about the *huge* quantity of warnings, they are normal)
+Normally, at the end of the process, you should not see any error message and you get back to the terminal prompt
+
+Now, go back to parent directory and you should be able to launch classicladder2
+
+cd ..
+./classicladder2
+
+Enjoy !!!
+
+
+COMPILE CLASSICLADDER2 WITH CODE::BLOCKS
+========================================
+
+For those who hate command line compilation process, I provide a Code::Blocks project file inside the /src directory
+To use this file, you must have Code::Blocks 20 installed on your Raspberry Pi. For some unknown reasons, Code::Blocks seems to have been removed from latest Raspbian OS...
+In that case, you will need to install it by yourself
+
+sudo apt install codeblocks
+
+Make sure that the version installed is at least 20.0. Older versions of CodeBlocks will not work to compile ClassicLadder2.
+Launch CodeBlocks (it is normally located in the "Programming" menu of Raspberry Pi OS)
+Load the classicladder2.cbp file in Code::Blocks and click on the gear icon on the toolbar to compile the application (or use the Build command in the Build menu)
+
+Once compiled, you can launch ClassicLadder2 by cliking on the green arrow icon (or use the Run command in the Build menu)
