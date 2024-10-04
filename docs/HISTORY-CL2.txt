@@ -1,0 +1,33 @@
+Classic Ladder 2 Project
+Forked from Classic Ladder by Marc LE DOUARAIN
+Copyright Marc LE DOUARAIN for Classic Ladder
+Copyright Benoit BOUCHEZ for Classic Ladder 2 specific changes
+https://github.com/bbouchez/classicladder2
+----------
+HISTORY...
+----------
+
+
+v0.10.000 (21 August 2024)
+   - Project ClassicLadder forked by Benoit BOUCHEZ (with authorization from Marc LE DOUARAIN. Thank you !!! 8-)
+   - Classic Ladder 2 aims a better compatibility with IEC61131-3 norm. In the future, I also plan to replace GTK3 with wxWidgets as GTK3 generates a *huge* amount of warnings when compiled
+   - Created a Code::Blocks project for easier development
+   - Fork moved on Github : https://github.com/bbouchez/classicladder2
+   - Message "VerifyConnection" was flooding the console constantly even when verbose level = 0. Message is now displayed only for max verbose level
+   - Added delay between opening Modbus RTU and start of communication as some USB serial port (Arduino) crash if comm starts too early after opening the port
+      when application is launched automatically (automatic loading and starting of a project)
+   - Program version, description, etc... updated in classicladder.h
+   - Updated About dialog
+   - Added capability to put coils anywhere on a rung and to chain coils as required by IEC61131-3 Ladder language specification
+      - Editor modified in VerifyConstraintsAndRulesForElement in edit.c to allow drawing coils anywhere
+      - Modified CalcTypeOutput, CalcTypeOutputSetReset, CalcTypeOutputJump and CalcTypeOutputCall to make coil act as a wire (transparent to left state)
+   - Support for old timers and monos removed (comment in Makefile) as CL2 targets IEC61131-3 compliance only
+   - Header files updated to allow compilation with C++ modules (required to replace GTK by wxWidgets)
+   - Added missing header guards #ifndef... #define
+   - New project file format to avoid mismatch with original ClassicLadder files
+   - Var types identifiers and rung elements identifiers renumbered to allow optimization of PLC cyle time by using function arrays rather than heavy switch..case sequences
+   - %Cxx.D variable name (counter done output) replaced by %Cxx.Q as specified by IEC61131-3
+   - %Xxx.A variable name (sequential step active) replaced by %Xxx.X as specified by IEC61131-3 
+   - Counters are now full 32-bit range from -2147483648 to 2147483647. OutputEmpty is set when value wraps from -2147483648 to 2147483647, OutputFull is set when counters wrap value is 2147483647 to -2147483648
+   - Counter preset value is 32-bit (not limited anymore to 0..9999)
+   - Counter inputs and outputs names on editor changed accordingly to IEC61131-3
